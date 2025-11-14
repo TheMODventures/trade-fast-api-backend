@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.controllers import ocr_controller, prompt_controller
+from app.controllers import ocr_controller, prompt_controller, vapi_controller, voice_lc_controller
 from app.utils.middleware import APIKeyMiddleware
 
 app = FastAPI(
     title="Trade Fast API Backend",
-    description="FastAPI backend with LangChain and Gemini integration - Secured with API Key",
+    description="FastAPI backend with LangChain, Gemini and VAPI Voice AI integration - Secured with API Key",
     version="1.0.0"
 )
 
@@ -24,6 +24,8 @@ app.add_middleware(
 # Include routers
 app.include_router(ocr_controller.router)
 app.include_router(prompt_controller.router)
+app.include_router(vapi_controller.router)
+app.include_router(voice_lc_controller.router)
 
 @app.get("/")
 async def root():
@@ -37,7 +39,9 @@ async def root():
         },
         "agents": {
             "ocr": "Gemini Vision OCR for text extraction and mapping",
-            "prompt": "Gemini-powered prompt-based agent"
+            "prompt": "Gemini-powered prompt-based agent",
+            "vapi": "VAPI Voice AI for LC form completion via voice calls",
+            "voice-lc": "Gemini-powered LC data extraction from voice transcripts"
         },
         "docs": "/docs"
     }

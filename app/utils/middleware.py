@@ -1,4 +1,4 @@
-from fastapi import Request, HTTPException
+from fastapi import Request
 from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware
 from app.utils.api_key import verify_api_key, get_api_key_from_header
@@ -16,6 +16,7 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
         "/docs",
         "/redoc",
         "/openapi.json",
+        "/api/v1/vapi/webhook",  # VAPI webhook - called by VAPI servers, not frontend
     ]
 
     async def dispatch(self, request: Request, call_next):

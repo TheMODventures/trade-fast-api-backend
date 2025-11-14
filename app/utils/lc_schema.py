@@ -130,7 +130,7 @@ LC_FORM_SCHEMA = {
             "type": "string",
             "aliases": ["name of applicant", "applicant", "buyer", "importer name", "importer"]
         },
-        "city_of_import": {
+        "import_city": {
             "field": "import_city",
             "type": "string",
             "aliases": ["city of import", "import city", "buyer city", "destination city"]
@@ -142,7 +142,7 @@ LC_FORM_SCHEMA = {
             "type": "string",
             "aliases": ["name of beneficiary", "beneficiary", "seller", "exporter name", "exporter", "supplier"]
         },
-        "city_of_export": {
+        "export_city": {
             "field": "export_city",
             "type": "string",
             "aliases": ["city of export", "export city", "seller city", "origin city"]
