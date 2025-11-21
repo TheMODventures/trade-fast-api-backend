@@ -41,7 +41,8 @@ async def root():
             "ocr": "Gemini Vision OCR for text extraction and mapping",
             "prompt": "Gemini-powered prompt-based agent",
             "vapi": "VAPI Voice AI for LC form completion via voice calls",
-            "voice-lc": "Gemini-powered LC data extraction from voice transcripts"
+            "voice-lc": "Gemini-powered LC data extraction from voice transcripts",
+            "sanctions": "Real-time trade sanctions compliance checker with web search"
         },
         "docs": "/docs"
     }
